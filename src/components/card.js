@@ -17,7 +17,41 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const newsCard = document.createElement('div');
+  const newsHeadline = document.createElement('div');
+  const newsAuthor = document.createElement('div');
+  const newsContainer = document.createElement('div');
+  const newsAuthorPhoto = document.createElement('img');
+  const newsAuthorName = document.createElement('span');
+
+  newsCard.classList.add('card');
+  newsHeadline.classList.add('headline');
+  newsAuthor.classList.add('author');
+  newsContainer.classList.add('img-container');
+
+  newsAuthorPhoto.src = article.authorPhoto;
+  newsHeadline.textContent = article.headline;
+  newsAuthorName.textContent = article.authorName;
+
+
+  newsCard.appendChild(newsHeadline);
+  newsCard.appendChild(newsAuthor);
+  newsAuthor.appendChild(newsContainer);
+  newsAuthor.appendChild(newsAuthorPhoto);
+  newsAuthor.appendChild(newsAuthorName);
+
+  return newsCard;
+  
 }
+// console.log(Card(newsAuthorPhoto));
+
+
+//const articleObject = {headline:"Hi", authorPhoto:"empty", authorName:"Jasmin"}
+
+// console.log(Card(articleObject));
+
+
+
 
 const cardAppender = (selector) => {
   // TASK 6
