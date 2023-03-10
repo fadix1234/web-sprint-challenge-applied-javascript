@@ -38,13 +38,14 @@ const Card = (article) => {
   newsCard.appendChild(newsHeadline);
   newsCard.appendChild(newsAuthor);
   newsAuthor.appendChild(newsContainer);
-  newsAuthor.appendChild(newsAuthorPhoto);
+  newsContainer.appendChild(newsAuthorPhoto);
   newsAuthor.appendChild(newsAuthorName);
 
   return newsCard;
   
 }
-// console.log(Card(newsAuthorPhoto));
+
+//console.log(Card(newsAuthorPhoto));
 
 
 //const articleObject = {headline:"Hi", authorPhoto:"empty", authorName:"Jasmin"}
@@ -98,11 +99,11 @@ const cardAppender = (selector) => {
 
 
 
-      console.log('ORANGE',response.data.articles.bootstrap[1]);
-      console.log('APPLE', response.data.articles.bootstrap[0]);
-      console.log('LIME',response);
-      console.log('CHERRY',Card(response.data.articles.bootstrap[2]));
-      console.log('PEACH',response.data.articles.node.js);
+      //console.log('ORANGE',response.data.articles.bootstrap[1]);
+      //console.log('APPLE', response.data.articles.bootstrap[0]);
+      //console.log('LIME',response);
+      //console.log('CHERRY',Card(response.data.articles.bootstrap[2]));
+     // console.log('PEACH',response.data.articles.node.js);
     })
   })
 })
