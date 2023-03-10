@@ -1,3 +1,4 @@
+import axios from 'axios';
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -62,6 +63,58 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
+  
+  axios.get(`http://localhost:5001/api/articles`).then(response => {
+    response.data.articles.bootstrap.forEach (article => {
+     const newsCard = Card(article);
+     document.querySelector(selector).appendChild(newsCard);
+   });
+
+   axios.get(`http://localhost:5001/api/articles`).then(response => {
+    response.data.articles.javascript.forEach (article => {
+     const newsCard = Card(article);
+     document.querySelector(selector).appendChild(newsCard);
+   });
+
+
+   axios.get(`http://localhost:5001/api/articles`).then(response => {
+    response.data.articles.technology.forEach (article => {
+     const newsCard = Card(article);
+     document.querySelector(selector).appendChild(newsCard);
+   });
+   
+   axios.get(`http://localhost:5001/api/articles`).then(response => {
+    response.data.articles.jquery.forEach (article => {
+     const newsCard = Card(article);
+     document.querySelector(selector).appendChild(newsCard);
+   });
+
+   axios.get(`http://localhost:5001/api/articles`).then(response => {
+    response.data.articles.node.forEach (article => {
+     const newsCard = Card(article);
+     document.querySelector(selector).appendChild(newsCard);
+   });
+  
+
+
+
+      console.log('ORANGE',response.data.articles.bootstrap[1]);
+      console.log('APPLE', response.data.articles.bootstrap[0]);
+      console.log('LIME',response);
+      console.log('CHERRY',Card(response.data.articles.bootstrap[2]));
+      console.log('PEACH',response.data.articles.node.js);
+    })
+  })
+})
+  })
+  })
+   
+ 
+ .catch(err => console.error(err));
+ 
+ };
+
+
+
 
 export { Card, cardAppender }
